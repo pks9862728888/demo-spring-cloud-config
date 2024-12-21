@@ -1,0 +1,43 @@
+server:
+  port: 8888
+
+spring:
+  application:
+    name: config-server
+logging:
+  level:
+    org.springframework.cloud.config: debug
+    org.eclipse.jgit: info
+
+---
+spring:
+  config:
+    activate:
+        on-profile: prod
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/pks9862728888/demo-spring-cloud-config.git
+          # branch to clone from
+          default-label: master
+          clone-on-start: true
+          # Force pull is true to avoid conflicts while cloning
+          force-pull: true
+          # Looks for a subdirectory in the git repository
+          search-paths: 'config'
+
+---
+spring:
+  config:
+    activate:
+      on-profile: local
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/pks9862728888/demo-spring-cloud-config.git
+          default-label: local
+          clone-on-start: true
+          force-pull: true
+          search-paths: 'config'
