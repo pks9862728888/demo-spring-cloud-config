@@ -1,0 +1,15 @@
+spring:
+  application:
+    name: user-service
+
+logging:
+  level:
+    org.springframework.retry: DEBUG
+    org.springframework.cloud.config: DEBUG
+
+---
+spring:
+  config:
+    activate:
+        on-profile: local
+    import: configserver:http://localhost:8888
