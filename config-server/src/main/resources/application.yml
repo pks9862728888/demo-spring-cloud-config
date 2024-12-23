@@ -20,7 +20,7 @@ spring:
         git:
           uri: https://github.com/pks9862728888/demo-spring-cloud-config.git
           # branch to clone from
-          default-label: master
+          default-label: master-prod
           clone-on-start: true
           # Force pull is true to avoid conflicts while cloning
           force-pull: true
@@ -37,7 +37,7 @@ spring:
       server:
         git:
           uri: https://github.com/pks9862728888/demo-spring-cloud-config.git
-          default-label: local
+          default-label: master
           clone-on-start: true
           force-pull: true
           search-paths: 'config'

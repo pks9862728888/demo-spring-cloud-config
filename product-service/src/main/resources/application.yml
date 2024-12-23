@@ -1,0 +1,17 @@
+spring:
+  application:
+    name: product-service
+  config:
+    failFast: true
+    retry:
+      initialInterval: 1000
+      maxInterval: 60000
+      maxAttempts: 8
+      multiplier: 2
+
+---
+spring:
+  config:
+    activate:
+      on-profile: local
+    import: configserver:http://localhost:8888
