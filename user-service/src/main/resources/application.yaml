@@ -1,6 +1,14 @@
 spring:
   application:
     name: user-service
+  cloud:
+    config:
+      failFast: true
+      retry:
+        initialInterval: 1000
+        maxInterval: 60000
+        maxAttempts: 8
+        multiplier: 2
 
 logging:
   level:
