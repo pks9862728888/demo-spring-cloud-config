@@ -9,6 +9,12 @@ spring:
       maxAttempts: 8
       multiplier: 2
 
+management:
+  endpoints:
+    web:
+      exposure:
+        include: 'env'
+
 ---
 spring:
   config:

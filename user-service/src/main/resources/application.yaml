@@ -15,6 +15,12 @@ logging:
     org.springframework.retry: DEBUG
     org.springframework.cloud.config: DEBUG
 
+management:
+  endpoints:
+    web:
+      exposure:
+        include: 'env'
+
 ---
 spring:
   config:
