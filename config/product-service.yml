@@ -1,3 +1,6 @@
+server:
+  port: 8081
+
 feature-toggle:
   feature1: false
   feature2: false
